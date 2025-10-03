@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オンライン絵馬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>オンライン絵馬</h1>
+        <!--スタンプが押されたら、即別の願掛けになる方がいい？
+        ユーザー名みたいなの登録できた方がいい？
+        -->
+        <button class="add-wish-btn" onclick="openModal()">+</button>
+        <div class="wishes-grid" id="othersWishes"></div>
+
+        <div class="my-wishes">
+            <div class="section-title">📝 あなたの宣言 📝</div>
+            <div class="wishes-grid" id="myWishes"></div>
+        </div>
+    </div>
+
+    <div class="input-modal" id="inputModal">
+        <div class="modal-content">
+            <h2>あなたの願いを書いてください</h2>
+            <textarea id="wishInput" rows="4" maxlength="50" placeholder="願いを入力..."></textarea>
+            <div class="char-count"><span id="charCount">0</span>/30</div>
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="closeModal()">キャンセル</button>
+                <button class="save-btn" onclick="saveWish()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

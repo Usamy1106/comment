@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fire-red: #f13400;
+    --color-passion-orange: #ff9900;
+    --color-ambition-pink: #ff6b6b;
+}
+
+body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    background: linear-gradient(135deg, var(--color-ambition-pink) 0%, var(--color-passion-orange) 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 60svw;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:1280px) {
+    .container {
+        max-width: 70svw;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .container {
+        max-width: 88svw;
+    }
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 12dvh;
+    font-size: 48px;
+    margin-bottom: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width:1280px) {
+    h1 {
+        font-size: 36px
+    }
+}
+
+@media screen and (max-width:767px) {
+    h1 {
+        font-size: 32px
+    }
+}
+
+.add-wish-btn {
+    position: fixed;
+    bottom: 10vh;
+    right: 10vw;
+    display: block;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: white;
+    color: var(--color-fire-red);
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.add-wish-btn:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:1280px) {
+    .add-wish-btn {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+}
+
+.input-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: var(--color-fire-red);
+}
+
+.modal-content textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-fire-red);
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+    font-family: inherit;
+}
+
+.char-count {
+    text-align: right;
+    margin-top: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.save-btn {
+    background: var(--color-fire-red);
+    color: white;
+}
+
+.cancel-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.modal-buttons button:hover {
+    opacity: 0.8;
+}
+
+.section-title {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.wish-card {
+    background-image: url(images/ema.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 68px 44px 20px;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.2s;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-text {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    min-height: 60px;
+}
+
+.fire-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    gap: .25em;
+    align-items: center;
+}
+
+.fire-icon {
+    font-style: normal;
+}
+
+.fire-btn:hover .fire-icon {
+    transform: scale(1.3);
+}
+
+.fire-count {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.my-wishes {
+    margin-top: 40px;
+}
+
+.my-wish-card {
+    background-image: url(images/ema.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 44px 44px 20px;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+}
+
+.yet-text {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
